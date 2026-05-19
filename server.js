@@ -7,9 +7,9 @@ const dotenv = require("dotenv");
 const cookieParser = require("cookie-parser");
 const path = require("path");
 
-const authRoutes = require("./routes/auth.routes");
-const productRoutes = require("./routes/product.routes");
-const orderRoutes = require("./routes/order.routes");
+const authRoutes = require("./Routes/auth.routes");
+const productRoutes = require("./Routes/product.routes");
+const orderRoutes = require("./Routes/order.routes");
 const { seedAdmin, seedProducts } = require("./seed");
 dotenv.config();
 
