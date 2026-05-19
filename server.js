@@ -5,7 +5,12 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const dotenv = require("dotenv");
 const cookieParser = require("cookie-parser");
+const path = require("path");
 
+const authRoutes = require("./routes/auth.routes");
+const productRoutes = require("./routes/product.routes");
+const orderRoutes = require("./routes/order.routes");
+const { seedAdmin, seedProducts } = require("./seed");
 dotenv.config();
 
 const app = express();
@@ -20,11 +25,7 @@ app.use(
 app.use(express.json());
 app.use(cookieParser());
 
-// Routes
-const authRoutes = require("./routes/auth.routes");
-const productRoutes = require("./routes/product.routes");
-const orderRoutes = require("./routes/order.routes");
-const { seedAdmin, seedProducts } = require("./seed");
+
 
 app.use("/api/auth", authRoutes);
 app.use("/api/products", productRoutes);
